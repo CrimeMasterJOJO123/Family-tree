@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Family Tree</title>
+  <style>
+    /* Base styling for the page */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #f0f2f5, #e0eafc); /* Soft gradient background */
+      margin: 0;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    /* Heading styles */
+    h1 {
+      color: #2c3e50;
+      font-size: 3em;
+      margin-bottom: 40px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Light text shadow for depth */
+    }
+
+    /* Container for the family tree */
+    .tree {
+      display: flex;
+      justify-content: center;
+      overflow-x: auto; /* Allows horizontal scroll on smaller screens */
+      padding-bottom: 20px;
+    }
+
+    /* Each generation is stacked vertically */
+    .generation {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+
+    /* Styling for each family member */
+    .member {
+      background: linear-gradient(145deg, #ffffff, #e6e6e6); /* Light 3D effect */
+      border: 2px solid #3498db; /* Blue border */
+      border-radius: 12px;
+      padding: 15px 25px;
+      margin: 10px;
+      box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+      min-width: 120px;
+      font-weight: bold;
+      color: #2c3e50;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      cursor: pointer; /* Pointer cursor on hover */
+    }
+
+    /* Hover effect to make members interactive */
+    .member:hover {
+      transform: scale(1.08);
+      background-color: #d6ecff; /* Light blue background on hover */
+    }
+
+    /* Vertical line connecting parent to children */
+    .line {
+      width: 3px;
+      height: 30px;
+      background-color: #3498db;
+      margin: 0 auto;
+    }
+
+    /* Container for children nodes */
+    .children {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap; /* Allows wrapping on smaller screens */
+      gap: 40px;
+      margin-top: 10px;
+    }
+
+    /* Style for placeholder or inactive members */
+    .placeholder .member {
+      color: #bbb;
+      border-style: dashed;
+      background: #f9f9f9;
+      cursor: not-allowed;
+    }
+
+    /* Customize scrollbar for horizontal scroll on .tree */
+    .tree::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .tree::-webkit-scrollbar-thumb {
+      background: #ccc;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Family Tree</h1>
+
+  <div class="tree">
+    <div class="generation">
+      <!-- Root ancestor -->
+      <div class="member">Pratab Rai</div>
+      <div class="line"></div>
+      <div class="children">
+
+        <!-- First child and their children -->
+        <div class="generation">
+          <div class="member">Ajeet</div>
+          <div class="line"></div>
+          <div class="children">
+            <div class="member">Neeraj</div>
+            <div class="member">Kirtan</div>
+          </div>
+        </div>
+
+        <!-- Second child -->
+        <div class="generation">
+          <div class="member">Jitoo</div>
+          <div class="line"></div>
+          <div class="children">
+            <div class="member">Parmeet</div>
+            <div class="member">Angel</div>
+          </div>
+        </div>
+
+        <!-- Third child -->
+        <div class="generation">
+          <div class="member">Rakhi</div>
+          <div class="line"></div>
+          <div class="children">
+            <div class="member">Kirtan</div>
+          </div>
+        </div>
+
+        <!-- Fourth child -->
+        <div class="generation">
+          <div class="member">Vicky</div>
+          <div class="line"></div>
+          <div class="children">
+            <div class="member">Rimjhim</div>
+            <div class="member">Nanki</div>
+            <div class="member">Nanik</div>
+          </div>
+        </div>
+
+        <!-- Fifth child -->
+        <div class="generation">
+          <div class="member">Manjesh</div>
+          <div class="line"></div>
+          <div class="children">
+            <div class="member">Muskan</div>
+          </div>
+        </div>
+
+        <!-- Sixth child -->
+        <div class="generation">
+          <div class="member">Roma</div>
+          <div class="line"></div>
+          <div class="children">
+            <div class="member">Neha</div>
+            <div class="member">Shabo</div>
+            <div class="member">Appal</div>
+            <div class="member">Paddam</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
